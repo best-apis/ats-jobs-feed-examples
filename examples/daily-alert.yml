@@ -1,0 +1,18 @@
+name: daily-new-jobs-alert
+on:
+  schedule: [{ cron: "0 7 * * *" }]
+  workflow_dispatch:
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - run: python 02_daily_new_jobs_alert.py
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          KEYWORDS: "machine learning,data engineer"
+          COUNTRY: "US"
