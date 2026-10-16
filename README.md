@@ -21,7 +21,7 @@ APIFY_MAX_ITEMS=5 python 03_hiring_signals.py data   # cap results while experim
 Runs are pay-per-result ($6 per 1,000 jobs, $0.005 per run); every script passes a max cost cap.
 
 ## Try it without an account
-A free sample (4,000+ jobs, titles/companies/links only) and a data report: **https://best-apis.pages.dev/sample/**.
+A free sample (3,800+ jobs, titles/companies/links only) and a data report: **https://best-apis.pages.dev/sample/**.
 
 ## Notes
 - Data refreshes nightly; each record has `dataAsOf` and `snapshotId`.
